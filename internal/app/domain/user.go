@@ -26,6 +26,11 @@ type UserRegister struct {
 	Password string
 }
 
+type UserLogin struct {
+	Email    string
+	Password string
+}
+
 func NewUser(email, name, password string) (*User, error) {
 	if name == "" {
 		return nil, errors.New("name is required")
@@ -80,4 +85,9 @@ func (u User) DecryptJWT(token string) (map[string]interface{}, error) {
 	}
 
 	return parsedToken.Claims.(jwt.MapClaims), nil
+}
+
+func (u User) CorrectPassword(password string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password))
+	return err == nil
 }
