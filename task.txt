@@ -1,6 +1,0 @@
-Create endpoint
-create exercise
-create question
-create answer
-
-Modify json response like on openapi.json (using snake case and remove some field from the response)
