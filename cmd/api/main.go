@@ -28,13 +28,13 @@ func main() {
 	db := database.NewConnDatabase()
 	exerciseHandler := handler.NewExerciseHandler(db)
 	userHandler := userHandler.NewUserHandler(db)
-	r.POST("/exercises", middleware.WithAuh(), exerciseHandler.CreateExercise) //! Endpoint create exercise
+	r.POST("/exercises", middleware.WithAuh(), exerciseHandler.CreateExercise) //! Create exercise
 	groupExerciseId := r.Group("/exercises/:exerciseId")
 	{
 		groupExerciseId.GET("", middleware.WithAuh(), exerciseHandler.GetExerciseByID)
 		groupExerciseId.GET("score", middleware.WithAuh(), exerciseHandler.GetScore)
 		groupExerciseId.POST("questions", middleware.WithAuh(), exerciseHandler.CreateQuestion)                  //! Create questions of the exercise
-		groupExerciseId.POST("questions/:questionId/answer", middleware.WithAuh(), exerciseHandler.CreateAnswer) //! Answer the question of the exercises
+		groupExerciseId.POST("questions/:questionId/answer", middleware.WithAuh(), exerciseHandler.CreateAnswer) //! Create answer the question of the exercises
 	}
 
 	r.POST("/register", userHandler.Register)
