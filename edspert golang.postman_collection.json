@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "c24f34ac-1913-4a3d-a3da-44da967b31eb",
+		"name": "edspert golang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12510739"
+	},
+	"item": [
+		{
+			"name": "day-5",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"john@mail.com\",\n  \"password\": \"password123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:1234/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"john doe\",\n  \"email\": \"john@mail.com\",\n  \"password\": \"password123\",\n  \"no_hp\": \"098393939393\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:1234/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Exercise",
+					"item": [
+						{
+							"name": "Create Exercise",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkwMzU3NDQsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.1wYFeWKyseAs4loLenl0_m7aMjuk2CJqHpIYHFQHE5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Exercise Test\",\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:1234/exercises",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get an Exercise",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkwMzU3NDQsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.1wYFeWKyseAs4loLenl0_m7aMjuk2CJqHpIYHFQHE5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:1234/exercises/:exerciseId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"exercises",
+										":exerciseId"
+									],
+									"variable": [
+										{
+											"key": "exerciseId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a score exercise",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkwMzU3NDQsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.1wYFeWKyseAs4loLenl0_m7aMjuk2CJqHpIYHFQHE5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer ewew"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:1234/exercises/:exerciseId/score",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"exercises",
+										":exerciseId",
+										"score"
+									],
+									"variable": [
+										{
+											"key": "exerciseId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create questions of the exercise",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkwMzU3NDQsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.1wYFeWKyseAs4loLenl0_m7aMjuk2CJqHpIYHFQHE5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer ewew"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": \"Berapa hasil dari 7 + 7?\",\n  \"option_a\": \"12\",\n  \"option_b\": \"11\",\n  \"option_c\": \"16\",\n  \"option_d\": \"14\",\n  \"correct_answer\": \"d\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:1234/exercises/:exerciseId/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"exercises",
+										":exerciseId",
+										"questions"
+									],
+									"variable": [
+										{
+											"key": "exerciseId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Answer the question of the exercises",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkwMzU3NDQsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.1wYFeWKyseAs4loLenl0_m7aMjuk2CJqHpIYHFQHE5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer ewew"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"answer\": \"d\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:1234/exercises/:exerciseId/questions/:questionId/answer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1234",
+									"path": [
+										"exercises",
+										":exerciseId",
+										"questions",
+										":questionId",
+										"answer"
+									],
+									"variable": [
+										{
+											"key": "exerciseId",
+											"value": "2"
+										},
+										{
+											"key": "questionId",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
