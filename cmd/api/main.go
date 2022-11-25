@@ -25,7 +25,7 @@ func main() {
 		})
 	})
 
-	db := database.NewConnDatabase()
+	db := database.NewConnDatabasePostgres()
 	exerciseHandler := handler.NewExerciseHandler(db)
 	userHandler := userHandler.NewUserHandler(db)
 	r.POST("/exercises", middleware.WithAuh(), exerciseHandler.CreateExercise) //! Create exercise
