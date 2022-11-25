@@ -40,5 +40,5 @@ func main() {
 
 	r.POST("/register", userHandler.Register)
 	r.POST("/login", userHandler.Login)
-	r.Run(":1234")
+	r.Run()
 }
