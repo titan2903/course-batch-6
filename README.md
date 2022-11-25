@@ -1,4 +1,8 @@
-# course
+# Edspert Go Batch 6
+
+## Run In Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9a35903c21f1e4a633b3?action=collection%2Fimport)
 
 ## Package
 
