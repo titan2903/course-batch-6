@@ -10,6 +10,7 @@
 ## Dependencies
 
 - mysql
+- postgresql
 - golang
 
 ## API Documentation
