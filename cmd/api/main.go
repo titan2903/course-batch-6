@@ -19,9 +19,9 @@ func main() {
 	}
 
 	r := gin.Default()
-	r.GET("/hello", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, map[string]string{
-			"message": "hello world",
+			"message": "Successfully Deployed application",
 		})
 	})
 
