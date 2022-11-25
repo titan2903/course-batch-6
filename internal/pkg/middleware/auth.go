@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"context"
-	"exercise/internal/app/domain"
+	"course-batch-6/internal/app/domain"
 	"net/http"
 	"strings"
 

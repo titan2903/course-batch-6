@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"exercise/internal/app/domain"
+	"course-batch-6/internal/app/domain"
 	"net/http"
 	"strconv"
 	"strings"
@@ -16,7 +16,9 @@ type ExerciseHandler struct {
 }
 
 func NewExerciseHandler(db *gorm.DB) *ExerciseHandler {
-	return &ExerciseHandler{db: db}
+	return &ExerciseHandler{
+		db: db,
+	}
 }
 
 func (eh ExerciseHandler) GetExerciseByID(c *gin.Context) {

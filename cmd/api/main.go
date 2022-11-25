@@ -1,10 +1,11 @@
 package main
 
 import (
-	"exercise/internal/app/database"
-	"exercise/internal/app/exercise/handler"
-	userHandler "exercise/internal/app/user/handler"
-	"exercise/internal/pkg/middleware"
+	"course-batch-6/internal/app/database"
+	exerciseHandler "course-batch-6/internal/app/exercise/handler"
+
+	userHandler "course-batch-6/internal/app/user/handler"
+	"course-batch-6/internal/pkg/middleware"
 	"log"
 	"net/http"
 
@@ -26,7 +27,7 @@ func main() {
 	})
 
 	db := database.NewConnDatabasePostgres()
-	exerciseHandler := handler.NewExerciseHandler(db)
+	exerciseHandler := exerciseHandler.NewExerciseHandler(db)
 	userHandler := userHandler.NewUserHandler(db)
 	r.POST("/exercises", middleware.WithAuh(), exerciseHandler.CreateExercise) //! Create exercise
 	groupExerciseId := r.Group("/exercises/:exerciseId")
