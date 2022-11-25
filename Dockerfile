@@ -1,7 +1,7 @@
 # STEP 1: build executable binary
 
 # Pull golang image
-FROM golang:1.18-alpine as build
+FROM golang:1.19-alpine as build
 
 # Additional Label
 LABEL maintainer="Titanio Yudista<titanioyudista98@gmail.com>"
@@ -27,4 +27,4 @@ RUN apk add bash build-base gcompat
 COPY --from=build /app/course-batch-6 .
 # Expose port
 EXPOSE 8000
-CMD ["/course-batch-6"]
+CMD ["course-batch-6"]
