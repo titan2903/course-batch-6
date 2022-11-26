@@ -3,6 +3,8 @@ package main
 import (
 	"course-batch-6/internal/app/database"
 	exerciseHandler "course-batch-6/internal/app/exercise/handler"
+	"fmt"
+	"os"
 
 	userHandler "course-batch-6/internal/app/user/handler"
 	"course-batch-6/internal/pkg/middleware"
@@ -40,5 +42,12 @@ func main() {
 
 	r.POST("/register", userHandler.Register)
 	r.POST("/login", userHandler.Login)
-	r.Run()
+
+	var port string
+	if os.Getenv("PORT") != "" {
+		port = os.Getenv("PORT")
+	} else {
+		port = "5000"
+	}
+	log.Fatal(r.Run(fmt.Sprintf(":%s", port)))
 }
