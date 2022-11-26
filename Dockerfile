@@ -23,4 +23,4 @@ RUN go build /app/main.go
 
 # Expose port
 EXPOSE 7000
-CMD ["/app/main.go"]
+CMD ["/app/main"]
