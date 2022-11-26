@@ -19,12 +19,12 @@ RUN go mod download
 COPY . .
 RUN cp -rf ./.env.example ./.env
 # Build app
-RUN go build -o course-batch-6
+RUN go build -o /app/main.go
 
 # step 2: build a small image
 FROM alpine:3.16.0
 RUN apk add bash build-base gcompat
-COPY --from=build /app/course-batch-6 .
+COPY --from=build /app/main.go .
 # Expose port
 EXPOSE 8000
-CMD ["course-batch-6"]
+CMD ["/app/main.go"]
