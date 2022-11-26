@@ -1,1 +1,0 @@
-web: course-batch-6
