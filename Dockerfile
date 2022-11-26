@@ -19,8 +19,12 @@ RUN go mod download
 COPY . .
 RUN cp -rf ./.env.example ./.env
 # Build app
-RUN go build /app/main.go
+RUN go build app/main.go
 
+# step 2: build a small image
+FROM alpine:3.16.0
+RUN apk add bash build-base gcompat
+COPY --from=build app/main.go .
 # Expose port
 EXPOSE 7000
 CMD ["/app/main"]
